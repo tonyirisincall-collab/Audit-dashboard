@@ -13,6 +13,7 @@
 html,body{height:100%;}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;overflow:hidden;}
 
+/* LOCK */
 .lock-screen{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;}
 .lock-box{background:var(--surface);border:1px solid var(--border2);border-radius:16px;padding:44px 40px;width:340px;text-align:center;}
 .lock-logo{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.2em;margin-bottom:20px;}
@@ -25,6 +26,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15
 .lock-btn:hover{opacity:.85;}
 .lock-err{font-size:12px;font-family:var(--mono);color:var(--red);margin-top:10px;min-height:16px;}
 
+/* LAYOUT */
 .layout{display:grid;grid-template-columns:220px 1fr;height:100vh;overflow:hidden;}
 .sidebar{background:var(--surface);border-right:1px solid var(--border);padding:24px 16px;display:flex;flex-direction:column;gap:4px;overflow-y:auto;}
 .sidebar-logo{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.15em;margin-bottom:6px;}
@@ -40,15 +42,24 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15
 .btn-refresh:hover{background:var(--green-dim);border-color:var(--accent);}
 .conn-msg{font-size:10px;font-family:var(--mono);margin-top:6px;color:var(--muted2);text-align:center;}
 
+/* CYCLE BAR */
 .cycle-bar{display:flex;align-items:center;gap:8px;padding:10px 24px;border-bottom:1px solid var(--border);background:var(--surface);flex-shrink:0;overflow-x:auto;}
 .cycle-label{font-size:10px;font-family:var(--mono);color:var(--muted2);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;}
-.cycle-btns{display:flex;gap:6px;}
-.cycle-btn{padding:5px 14px;font-size:11px;font-family:var(--mono);border:1px solid var(--border2);border-radius:20px;background:transparent;color:var(--muted2);cursor:pointer;white-space:nowrap;transition:all .15s;}
+.cycle-btns{display:flex;gap:6px;align-items:center;}
+.cycle-btn{display:flex;flex-direction:column;align-items:flex-start;padding:5px 12px;font-size:11px;font-family:var(--mono);border:1px solid var(--border2);border-radius:8px;background:transparent;color:var(--muted2);cursor:pointer;white-space:nowrap;transition:all .15s;line-height:1.3;}
 .cycle-btn:hover{border-color:var(--accent);color:var(--accent);}
 .cycle-btn.active{background:var(--green-dim);border-color:var(--accent);color:var(--accent);font-weight:600;}
-.cycle-add{padding:5px 10px;font-size:13px;border:1px dashed var(--border2);border-radius:20px;background:transparent;color:var(--muted);cursor:pointer;font-family:var(--mono);}
+.cycle-btn-name{font-weight:600;font-size:11px;}
+.cycle-btn-dates{font-size:9px;opacity:.7;margin-top:1px;}
+.cycle-btn.active .cycle-btn-dates{opacity:.85;}
+.cycle-status-dot{display:inline-block;width:5px;height:5px;border-radius:50%;margin-right:4px;vertical-align:middle;}
+.cycle-add{padding:5px 10px;font-size:13px;border:1px dashed var(--border2);border-radius:8px;background:transparent;color:var(--muted);cursor:pointer;font-family:var(--mono);align-self:stretch;display:flex;align-items:center;}
 .cycle-add:hover{border-color:var(--accent);color:var(--accent);}
+.cycle-spacer{flex:1;}
+.cycle-info-pill{font-size:10px;font-family:var(--mono);color:var(--muted2);padding:4px 10px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;white-space:nowrap;}
+.cycle-info-pill span{color:var(--text);}
 
+/* MAIN */
 .main-wrap{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
 .main{padding:24px 28px;overflow-y:auto;flex:1;}
 .view{display:none;}
@@ -58,13 +69,15 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15
 .page-title{font-size:22px;font-weight:900;margin-bottom:3px;}
 .page-sub{font-size:11px;font-family:var(--mono);color:var(--muted2);margin-bottom:22px;}
 
+/* METRICS */
 .metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:22px;}
 .metric{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 14px;}
 .metric-val{font-size:26px;font-weight:700;font-family:var(--mono);line-height:1;transition:color .3s;}
 .metric-label{font-size:10px;font-family:var(--mono);color:var(--muted2);margin-top:7px;text-transform:uppercase;letter-spacing:.08em;}
 .metric-sub{font-size:11px;color:var(--muted);margin-top:3px;}
-.val-green{color:var(--green);} .val-amber{color:var(--amber);} .val-red{color:var(--red);} .val-blue{color:var(--blue);}
+.val-green{color:var(--green);}.val-amber{color:var(--amber);}.val-red{color:var(--red);}.val-blue{color:var(--blue);}
 
+/* CHARTS */
 .charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px;}
 .chart-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;}
 .chart-title{font-size:10px;font-family:var(--mono);color:var(--muted2);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;}
@@ -77,6 +90,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15
 .sec-count{background:var(--surface2);padding:2px 7px;border-radius:4px;font-size:10px;}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
 
+/* TABLE */
 .log-row{display:grid;grid-template-columns:88px 110px 1fr 72px 72px 64px auto;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid var(--border);font-size:12px;transition:background .1s;}
 .log-row:last-child{border-bottom:none;}
 .log-row.header{background:var(--surface2);font-size:10px;font-family:var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding:9px 16px;}
@@ -92,6 +106,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15
 .badge-warn{background:var(--amber-dim);color:var(--amber);}
 .badge-bad{background:var(--red-dim);color:var(--red);}
 
+/* FLAGS */
 .flag-item{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;border-bottom:1px solid var(--border);animation:slideIn .3s ease;}
 @keyframes slideIn{from{opacity:0;transform:translateX(-8px);}to{opacity:1;transform:translateX(0);}}
 .flag-item:last-child{border-bottom:none;}
@@ -100,6 +115,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15
 .flag-text strong{font-weight:700;}
 .flag-note{font-size:11px;color:var(--muted2);margin-top:3px;font-family:var(--mono);}
 
+/* TL CARDS */
 .tl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
 .tl-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;}
 .tl-stat-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border);font-size:12px;}
@@ -107,6 +123,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15
 .tl-stat-label{color:var(--muted2);font-family:var(--mono);font-size:10px;text-transform:uppercase;}
 .tl-stat-val{font-family:var(--mono);font-weight:600;font-size:13px;}
 
+/* SUMMARY */
 .summary-hero{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:18px;}
 .summary-headline{font-size:13px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
 .summary-headline .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);}
@@ -119,32 +136,49 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15
 .insight-title{font-size:10px;font-family:var(--mono);color:var(--muted2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px;}
 .insight-val{font-size:13px;font-weight:600;line-height:1.5;}
 
+/* CYCLE MANAGER VIEW */
+.cycle-manager{max-width:680px;}
+.cycle-manager-title{font-size:14px;font-weight:700;margin-bottom:4px;}
+.cycle-manager-sub{font-size:12px;font-family:var(--mono);color:var(--muted2);margin-bottom:20px;}
+.cycle-list{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
+.cycle-list-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px;}
+.cycle-list-item.active-cycle{border-color:rgba(0,201,122,.3);background:var(--green-dim);}
+.cli-name{font-size:14px;font-weight:700;margin-bottom:4px;}
+.cli-dates{font-size:11px;font-family:var(--mono);color:var(--muted2);}
+.cli-badge{font-size:10px;font-family:var(--mono);padding:3px 9px;border-radius:5px;}
+.cli-badge.current{background:var(--green-dim);color:var(--green);}
+.cli-badge.past{background:var(--surface2);color:var(--muted2);}
+.cli-badge.future{background:var(--blue-dim);color:var(--blue);}
+.cli-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+.cli-row-count{font-size:11px;font-family:var(--mono);color:var(--muted2);}
+.btn-del{background:none;border:1px solid var(--border2);border-radius:6px;color:var(--muted);cursor:pointer;font-size:11px;font-family:var(--mono);padding:4px 10px;}
+.btn-del:hover{border-color:var(--red);color:var(--red);}
+.new-cycle-form{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;}
+.form-title{font-size:12px;font-family:var(--mono);color:var(--muted2);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px;}
+.form-field{display:flex;flex-direction:column;gap:6px;}
+.form-field label{font-size:10px;font-family:var(--mono);color:var(--muted2);text-transform:uppercase;letter-spacing:.08em;}
+.form-field input{background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:10px 12px;font-size:13px;font-family:var(--mono);color:var(--text);}
+.form-field input:focus{outline:none;border-color:var(--accent);}
+.form-preview{font-size:12px;font-family:var(--mono);color:var(--muted2);margin-bottom:14px;padding:10px 12px;background:var(--surface2);border-radius:8px;}
+.form-preview span{color:var(--text);}
+.btn-create{padding:11px 24px;font-size:13px;font-family:var(--mono);font-weight:600;background:var(--accent);color:#000;border:none;border-radius:8px;cursor:pointer;}
+
+/* EXPORT */
 .export-row{display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap;}
 .btn-export{display:flex;align-items:center;gap:7px;padding:8px 16px;font-size:12px;font-family:var(--mono);font-weight:600;border:1px solid var(--border2);border-radius:8px;background:var(--surface2);color:var(--text);cursor:pointer;transition:all .15s;}
 .btn-export:hover{border-color:var(--accent);color:var(--accent);}
 .btn-export svg{width:13px;height:13px;}
-
 .filter-row{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
 .filter-btn{padding:5px 13px;font-size:11px;font-family:var(--mono);border:1px solid var(--border2);border-radius:20px;background:transparent;color:var(--muted2);cursor:pointer;transition:all .15s;}
 .filter-btn:hover{border-color:var(--accent);color:var(--accent);}
 .filter-btn.active{background:var(--green-dim);border-color:var(--accent);color:var(--accent);}
-
 .empty-state{padding:48px;text-align:center;color:var(--muted);font-family:var(--mono);font-size:12px;}
-
-.modal-overlay{position:fixed;inset:0;background:#000b;z-index:1000;display:flex;align-items:center;justify-content:center;}
-.modal{background:var(--surface);border:1px solid var(--border2);border-radius:14px;padding:28px;width:360px;}
-.modal-title{font-size:16px;font-weight:700;margin-bottom:18px;}
-.modal-field{margin-bottom:14px;}
-.modal-field label{display:block;font-size:10px;font-family:var(--mono);color:var(--muted2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
-.modal-field input{width:100%;background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:10px 12px;font-size:14px;font-family:var(--mono);color:var(--text);}
-.modal-field input:focus{outline:none;border-color:var(--accent);}
-.modal-actions{display:flex;gap:10px;margin-top:18px;}
-.btn-ok{flex:1;padding:11px;font-size:13px;font-family:var(--mono);font-weight:600;background:var(--accent);color:#000;border:none;border-radius:8px;cursor:pointer;}
-.btn-cancel{padding:11px 18px;font-size:13px;font-family:var(--mono);background:transparent;color:var(--muted2);border:1px solid var(--border2);border-radius:8px;cursor:pointer;}
 </style>
 </head>
 <body>
 
+<!-- LOCK -->
 <div class="lock-screen" id="lock-screen">
   <div class="lock-box">
     <div class="lock-logo">CHASING OPS // AUDIT</div>
@@ -169,6 +203,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15
     <div class="nav-item" onclick="switchView('logs')"><span class="nav-dot"></span> All Logs</div>
     <div class="nav-item" onclick="switchView('flags')"><span class="nav-dot"></span> Red Flags</div>
     <div class="nav-item" onclick="switchView('tl')"><span class="nav-dot"></span> By TL</div>
+    <div class="nav-item" onclick="switchView('cycles')"><span class="nav-dot"></span> Cycles</div>
     <div class="sidebar-bottom">
       <button class="btn-refresh" onclick="fetchData()">↻ Refresh Data</button>
       <div class="conn-msg" id="conn-msg">Not loaded yet</div>
@@ -176,10 +211,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15
   </div>
 
   <div class="main-wrap">
+    <!-- CYCLE BAR -->
     <div class="cycle-bar">
       <span class="cycle-label">Cycle:</span>
       <div class="cycle-btns" id="cycle-buttons"></div>
-      <button class="cycle-add" onclick="showAddCycle()">+ New Cycle</button>
+      <div class="cycle-spacer"></div>
+      <div class="cycle-info-pill" id="cycle-info-pill">Select a cycle</div>
     </div>
 
     <div class="main">
@@ -209,9 +246,9 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15
       <!-- SUMMARY -->
       <div class="view" id="view-summary">
         <div class="page-title">Summary</div>
-        <div class="page-sub" id="summary-cycle-label">Full snapshot of all recorded data</div>
+        <div class="page-sub" id="summary-cycle-label">Full snapshot</div>
         <div class="export-row">
-          <button class="btn-export" onclick="exportToSheets()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Export to Google Sheets</button>
+          <button class="btn-export" onclick="exportToSheets()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Export to Sheets</button>
           <button class="btn-export" onclick="exportCSV()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download CSV</button>
         </div>
         <div class="summary-hero" id="summary-hero"><div class="empty-state">Loading...</div></div>
@@ -247,173 +284,351 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15
         <div class="tl-grid" id="tl-cards"><div class="empty-state">No data</div></div>
       </div>
 
-    </div>
-  </div>
-</div>
+      <!-- CYCLES MANAGER -->
+      <div class="view" id="view-cycles">
+        <div class="page-title">Cycles</div>
+        <div class="page-sub">Define and manage 45-day performance cycles</div>
+        <div class="cycle-manager">
+          <div class="cycle-list" id="cycle-list-ui"></div>
+          <div class="new-cycle-form">
+            <div class="form-title">+ Create New Cycle</div>
+            <div class="form-grid">
+              <div class="form-field"><label>Cycle Name</label><input type="text" id="f-name" placeholder="e.g. Cycle 2" oninput="updatePreview()"/></div>
+              <div class="form-field"><label>Start Date</label><input type="date" id="f-start" oninput="updatePreview()"/></div>
+              <div class="form-field"><label>Duration (days)</label><input type="number" id="f-days" value="45" min="1" max="365" oninput="updatePreview()"/></div>
+            </div>
+            <div class="form-preview" id="form-preview">Fill in the fields above to preview the cycle range.</div>
+            <button class="btn-create" onclick="createCycle()">Create Cycle →</button>
+          </div>
+        </div>
+      </div>
 
-<div class="modal-overlay" id="cycle-modal" style="display:none">
-  <div class="modal">
-    <div class="modal-title">New Cycle</div>
-    <div class="modal-field"><label>Cycle Name</label><input id="cycle-name-input" type="text" placeholder="e.g. Cycle 2"/></div>
-    <div class="modal-field"><label>Start Date</label><input id="cycle-start-input" type="date"/></div>
-    <div class="modal-field"><label>Duration (days)</label><input id="cycle-dur-input" type="number" value="45" min="1"/></div>
-    <div class="modal-actions">
-      <button class="btn-cancel" onclick="hideModal()">Cancel</button>
-      <button class="btn-ok" onclick="addCycle()">Create →</button>
     </div>
   </div>
 </div>
 
 <script>
-const SCRIPT_URL='https://script.google.com/macros/s/AKfycbxEO1Ua-lB1L24wKp7gaWrmqIqhiARo_2tGZuEvCwvE6WvNAsvETcoG1WqHqltLxd4X/exec';
-const PASS_HASH='3338f3c53f6bc9255387e4824b61ebd6e760edd9b87122f8ef2ee00c91bbc967';
-const CYCLES_KEY='chasing_cycles_v2';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwYTb5pDWKNWrx9SThjR6de0K_MEUPAsv0SsgIkx8wcdab2bLYlgay3YTsnlpwKH9cx/exec';
+const PASS_HASH  = '3338f3c53f6bc9255387e4824b61ebd6e760edd9b87122f8ef2ee00c91bbc967';
+const CYCLES_KEY = 'chasing_cycles_v3';
 
-let allRows=[],filteredRows=[],activeFilter='all',activeCycle='all',cycles=[],charts={};
+let allRows = [], filteredRows = [], activeFilter = 'all', activeCycle = 'all', cycles = [], charts = {};
 
-async function sha256(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('');}
-async function checkPass(){
-  const v=document.getElementById('lock-input').value;
-  if(await sha256(v)===PASS_HASH){
-    document.getElementById('lock-screen').style.display='none';
-    document.getElementById('main-layout').style.display='grid';
+/* ── AUTH ── */
+async function sha256(s) {
+  const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+  return Array.from(new Uint8Array(b)).map(x => x.toString(16).padStart(2,'0')).join('');
+}
+async function checkPass() {
+  const v = document.getElementById('lock-input').value;
+  if (await sha256(v) === PASS_HASH) {
+    document.getElementById('lock-screen').style.display = 'none';
+    document.getElementById('main-layout').style.display = 'grid';
     sessionStorage.setItem('audit_auth','1');
     initApp();
   } else {
-    const e=document.getElementById('lock-err');
-    e.textContent='Incorrect password. Try again.';
-    document.getElementById('lock-input').value='';
+    const e = document.getElementById('lock-err');
+    e.textContent = 'Incorrect password. Try again.';
+    document.getElementById('lock-input').value = '';
     document.getElementById('lock-input').focus();
-    setTimeout(()=>e.textContent='',3000);
+    setTimeout(() => e.textContent = '', 3000);
   }
 }
-if(sessionStorage.getItem('audit_auth')==='1'){
-  document.getElementById('lock-screen').style.display='none';
-  document.getElementById('main-layout').style.display='grid';
+if (sessionStorage.getItem('audit_auth') === '1') {
+  document.getElementById('lock-screen').style.display = 'none';
+  document.getElementById('main-layout').style.display = 'grid';
   initApp();
 }
-function initApp(){loadCycles();fetchData();}
+function initApp() { loadCycles(); fetchData(); }
 
-// CYCLES
-function loadCycles(){
-  try{cycles=JSON.parse(localStorage.getItem(CYCLES_KEY)||'[]');}catch{cycles=[];}
-  if(!cycles.length){cycles=[{id:'c0',name:'Cycle 1',start:null,days:45}];saveCycles();}
+/* ── CYCLES ── */
+function loadCycles() {
+  try { cycles = JSON.parse(localStorage.getItem(CYCLES_KEY) || '[]'); } catch { cycles = []; }
   renderCycleBar();
+  renderCycleManager();
 }
-function saveCycles(){localStorage.setItem(CYCLES_KEY,JSON.stringify(cycles));}
-function renderCycleBar(){
-  const wrap=document.getElementById('cycle-buttons');
-  wrap.innerHTML=`<button class="cycle-btn ${activeCycle==='all'?'active':''}" onclick="setCycle('all')">All Time</button>`+
-    cycles.map(c=>`<button class="cycle-btn ${activeCycle===c.id?'active':''}" onclick="setCycle('${c.id}')">${c.name}</button>`).join('');
+function saveCycles() { localStorage.setItem(CYCLES_KEY, JSON.stringify(cycles)); }
+
+function cycleEndDate(c) {
+  if (!c.start) return null;
+  const d = new Date(c.start);
+  d.setDate(d.getDate() + parseInt(c.days) - 1);
+  return d;
 }
-function setCycle(id){activeCycle=id;renderCycleBar();applyFilters();renderAll();}
-function getCycleRows(rows){
-  if(activeCycle==='all')return rows;
-  const c=cycles.find(x=>x.id===activeCycle);
-  if(!c||!c.start)return rows;
-  const s=new Date(c.start),e=new Date(s);e.setDate(e.getDate()+parseInt(c.days));
-  return rows.filter(r=>{const d=new Date(r['Date']);return d>=s&&d<e;});
+function cycleStatus(c) {
+  if (!c.start) return 'no-date';
+  const now = new Date(); now.setHours(0,0,0,0);
+  const s = new Date(c.start);
+  const e = cycleEndDate(c);
+  if (now < s) return 'future';
+  if (now > e) return 'past';
+  return 'current';
 }
-function showAddCycle(){document.getElementById('cycle-modal').style.display='flex';document.getElementById('cycle-start-input').value=new Date().toISOString().split('T')[0];document.getElementById('cycle-name-input').value='Cycle '+(cycles.length+1);}
-function hideModal(){document.getElementById('cycle-modal').style.display='none';}
-function addCycle(){
-  const name=document.getElementById('cycle-name-input').value.trim()||'Cycle '+(cycles.length+1);
-  const start=document.getElementById('cycle-start-input').value;
-  const days=parseInt(document.getElementById('cycle-dur-input').value)||45;
-  cycles.push({id:'c'+Date.now(),name,start,days});
-  saveCycles();hideModal();renderCycleBar();
+function fmtDate(d) {
+  if (!d) return '—';
+  return new Date(d).toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+}
+function fmtShort(d) {
+  if (!d) return '?';
+  return new Date(d).toLocaleDateString('en-US', { month:'short', day:'numeric' });
 }
 
-// FETCH
-async function fetchData(){
-  const msg=document.getElementById('conn-msg');
-  msg.textContent='Loading...';msg.style.color='var(--muted2)';
-  try{
-    const res=await fetch(SCRIPT_URL);
-    const data=await res.json();
-    if(data.status!=='ok')throw new Error(data.message);
-    allRows=data.rows||[];
-    msg.textContent=`✓ ${allRows.length} rows`;msg.style.color='var(--green)';
-    applyFilters();renderAll();
-    document.getElementById('last-refresh').textContent='Last updated: '+new Date().toLocaleTimeString('en-US');
-  }catch(e){
-    msg.textContent='Error: '+e.message;msg.style.color='var(--red)';
-    document.getElementById('last-refresh').textContent='Failed to load';
+function getRowsInCycle(c, rows) {
+  if (!c.start) return [];
+  const s = new Date(c.start); s.setHours(0,0,0,0);
+  const e = cycleEndDate(c); e.setHours(23,59,59,999);
+  return rows.filter(r => {
+    const d = new Date(r['Date']);
+    return !isNaN(d) && d >= s && d <= e;
+  });
+}
+
+function getCycleRows(rows) {
+  if (activeCycle === 'all') return rows;
+  const c = cycles.find(x => x.id === activeCycle);
+  if (!c) return rows;
+  return getRowsInCycle(c, rows);
+}
+
+function renderCycleBar() {
+  const wrap = document.getElementById('cycle-buttons');
+  const allBtn = `<button class="cycle-btn ${activeCycle==='all'?'active':''}" onclick="setCycle('all')"><span class="cycle-btn-name">All Time</span><span class="cycle-btn-dates">${allRows.length} logs total</span></button>`;
+  const cycBtns = cycles.map(c => {
+    const s = cycleStatus(c);
+    const dotColor = s==='current'?'var(--green)':s==='future'?'var(--blue)':'var(--muted)';
+    const end = cycleEndDate(c);
+    const dateRange = c.start ? fmtShort(c.start)+' → '+fmtShort(end) : 'No date set';
+    return `<button class="cycle-btn ${activeCycle===c.id?'active':''}" onclick="setCycle('${c.id}')">
+      <span class="cycle-btn-name"><span class="cycle-status-dot" style="background:${dotColor}"></span>${c.name}</span>
+      <span class="cycle-btn-dates">${dateRange}</span>
+    </button>`;
+  }).join('');
+  wrap.innerHTML = allBtn + cycBtns;
+  updateCycleInfoPill();
+}
+
+function updateCycleInfoPill() {
+  const el = document.getElementById('cycle-info-pill');
+  if (activeCycle === 'all') {
+    el.innerHTML = `<span>${allRows.length}</span> total logs across all cycles`;
+    return;
+  }
+  const c = cycles.find(x => x.id === activeCycle);
+  if (!c) return;
+  const s = cycleStatus(c);
+  const end = cycleEndDate(c);
+  const inCycle = getRowsInCycle(c, allRows).length;
+  if (s === 'current') {
+    const daysLeft = Math.ceil((end - new Date()) / 86400000);
+    el.innerHTML = `<span>${c.name}</span> · ${inCycle} logs · <span style="color:var(--green)">${daysLeft}d remaining</span>`;
+  } else if (s === 'past') {
+    el.innerHTML = `<span>${c.name}</span> · ${inCycle} logs · <span style="color:var(--muted2)">Ended ${fmtShort(end)}</span>`;
+  } else if (s === 'future') {
+    const daysUntil = Math.ceil((new Date(c.start) - new Date()) / 86400000);
+    el.innerHTML = `<span>${c.name}</span> · Starts in <span style="color:var(--blue)">${daysUntil}d</span>`;
+  } else {
+    el.innerHTML = `<span>${c.name}</span> · No start date set`;
   }
 }
 
-function applyFilters(){
-  let r=getCycleRows(allRows);
-  if(activeFilter!=='all')r=r.filter(x=>x['TL Name']===activeFilter);
-  filteredRows=r;
+function setCycle(id) {
+  activeCycle = id;
+  renderCycleBar();
+  applyFilters();
+  renderAll();
 }
-function getNum(r,k){const v=r[k];return typeof v==='number'?v:parseFloat(String(v).replace('%',''))||0;}
-const COLS=['#4d9fff','#c97aff','#f5a623','#ff6b6b','#00c97a','#ff9ff3'];
-function tlColor(n){let h=0;for(let c of n)h=(h*31+c.charCodeAt(0))&0xffffffff;return COLS[Math.abs(h)%COLS.length];}
-function ini(n){return n.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);}
 
-function renderAll(){renderOverview();renderLogs();renderFlags();renderTLCards();renderFilters();}
+function renderCycleManager() {
+  const listEl = document.getElementById('cycle-list-ui');
+  if (!cycles.length) {
+    listEl.innerHTML = '<div class="empty-state" style="padding:24px">No cycles yet. Create one below.</div>';
+    return;
+  }
+  listEl.innerHTML = cycles.map((c, i) => {
+    const s = cycleStatus(c);
+    const end = cycleEndDate(c);
+    const badgeClass = s === 'current' ? 'current' : s === 'future' ? 'future' : 'past';
+    const badgeLabel = s === 'current' ? '● Active' : s === 'future' ? '◌ Upcoming' : '✓ Completed';
+    const rowsInCycle = getRowsInCycle(c, allRows).length;
+    return `<div class="cycle-list-item ${s==='current'?'active-cycle':''}">
+      <div>
+        <div class="cli-name">${c.name}</div>
+        <div class="cli-dates">${c.start ? fmtDate(c.start)+' → '+fmtDate(end)+' ('+c.days+' days)' : 'No start date set'}</div>
+      </div>
+      <div class="cli-right">
+        <span class="cli-badge ${badgeClass}">${badgeLabel}</span>
+        <span class="cli-row-count">${rowsInCycle} log${rowsInCycle!==1?'s':''} recorded</span>
+        ${i > 0 ? `<button class="btn-del" onclick="deleteCycle('${c.id}')">Delete</button>` : ''}
+      </div>
+    </div>`;
+  }).join('');
 
-// OVERVIEW
-function renderOverview(){
-  const rows=filteredRows;
-  if(!rows.length){['m-avg-comp','m-avg-conv','m-total-dos','m-total-flags','m-total-days'].forEach(id=>{const el=document.getElementById(id);if(el){el.textContent='—';el.className='metric-val';}});return;}
-  const avgComp=Math.round(rows.reduce((a,r)=>a+getNum(r,'Completion %'),0)/rows.length);
-  const avgConv=Math.round(rows.reduce((a,r)=>a+getNum(r,'Conv %'),0)/rows.length);
-  const totalDOs=rows.reduce((a,r)=>a+getNum(r,'DOs'),0);
-  const flags=rows.filter(r=>getNum(r,'Completion %')<70||(getNum(r,'Conv %')<25&&getNum(r,'Total Leads')>0)).length;
-  setM('m-avg-comp',avgComp+'%',avgComp>=80?'val-green':avgComp>=50?'val-amber':'val-red');
-  setM('m-avg-conv',avgConv+'%',avgConv>=25&&avgConv<=35?'val-green':avgConv<25?'val-red':'val-blue');
-  setM('m-total-dos',totalDOs,'');
-  setM('m-total-flags',flags,flags===0?'val-green':flags<=3?'val-amber':'val-red');
-  setM('m-total-days',rows.length,'');
-  document.getElementById('latest-count').textContent=Math.min(8,rows.length);
-  document.getElementById('latest-logs').innerHTML=buildTable(rows.slice().reverse().slice(0,8));
+  // set default form values for new cycle
+  const nextNum = cycles.length + 1;
+  document.getElementById('f-name').value = 'Cycle ' + nextNum;
+  if (cycles.length) {
+    const lastCycle = cycles[cycles.length - 1];
+    const lastEnd = cycleEndDate(lastCycle);
+    if (lastEnd) {
+      const nextStart = new Date(lastEnd);
+      nextStart.setDate(nextStart.getDate() + 1);
+      document.getElementById('f-start').value = nextStart.toISOString().split('T')[0];
+    }
+  }
+  updatePreview();
+}
+
+function updatePreview() {
+  const name  = document.getElementById('f-name').value.trim() || 'New Cycle';
+  const start = document.getElementById('f-start').value;
+  const days  = parseInt(document.getElementById('f-days').value) || 45;
+  const el    = document.getElementById('form-preview');
+  if (!start) { el.innerHTML = 'Set a start date to preview.'; return; }
+  const s = new Date(start);
+  const e = new Date(start); e.setDate(e.getDate() + days - 1);
+  el.innerHTML = `<span>${name}</span> will run from <span>${fmtDate(s)}</span> to <span>${fmtDate(e)}</span> — <span>${days} days</span>. Any log submitted during this period will be counted in this cycle.`;
+}
+
+function createCycle() {
+  const name  = document.getElementById('f-name').value.trim();
+  const start = document.getElementById('f-start').value;
+  const days  = parseInt(document.getElementById('f-days').value) || 45;
+  if (!name) { alert('Please enter a cycle name.'); return; }
+  if (!start) { alert('Please set a start date.'); return; }
+  // Check overlap with existing cycles
+  const s = new Date(start); s.setHours(0,0,0,0);
+  const e = new Date(start); e.setDate(e.getDate() + days - 1); e.setHours(23,59,59,999);
+  for (const c of cycles) {
+    if (!c.start) continue;
+    const cs = new Date(c.start); cs.setHours(0,0,0,0);
+    const ce = cycleEndDate(c); ce.setHours(23,59,59,999);
+    if (s <= ce && e >= cs) {
+      if (!confirm(`Warning: This cycle overlaps with "${c.name}" (${fmtShort(cs)} → ${fmtShort(ce)}). Continue anyway?`)) return;
+      break;
+    }
+  }
+  cycles.push({ id: 'c' + Date.now(), name, start, days });
+  saveCycles();
+  renderCycleBar();
+  renderCycleManager();
+}
+
+function deleteCycle(id) {
+  const c = cycles.find(x => x.id === id);
+  if (!c) return;
+  if (!confirm(`Delete "${c.name}"? This only removes the cycle definition — no log data is deleted.`)) return;
+  cycles = cycles.filter(x => x.id !== id);
+  saveCycles();
+  if (activeCycle === id) { activeCycle = 'all'; applyFilters(); renderAll(); }
+  renderCycleBar();
+  renderCycleManager();
+}
+
+/* ── FETCH ── */
+async function fetchData() {
+  const msg = document.getElementById('conn-msg');
+  msg.textContent = 'Loading...'; msg.style.color = 'var(--muted2)';
+  try {
+    const res  = await fetch(SCRIPT_URL);
+    const data = await res.json();
+    if (data.status !== 'ok') throw new Error(data.message);
+    allRows = data.rows || [];
+    msg.textContent = `✓ ${allRows.length} rows`; msg.style.color = 'var(--green)';
+    applyFilters(); renderAll();
+    renderCycleBar(); // re-render with row counts
+    renderCycleManager();
+    document.getElementById('last-refresh').textContent = 'Last updated: ' + new Date().toLocaleTimeString('en-US');
+  } catch(e) {
+    msg.textContent = 'Error: ' + e.message; msg.style.color = 'var(--red)';
+    document.getElementById('last-refresh').textContent = 'Failed to load';
+  }
+}
+
+function applyFilters() {
+  let r = getCycleRows(allRows);
+  if (activeFilter !== 'all') r = r.filter(x => x['TL Name'] === activeFilter);
+  filteredRows = r;
+}
+
+const COLS = ['#4d9fff','#c97aff','#f5a623','#ff6b6b','#00c97a','#ff9ff3'];
+function tlColor(n) { let h=0; for(let c of n) h=(h*31+c.charCodeAt(0))&0xffffffff; return COLS[Math.abs(h)%COLS.length]; }
+function ini(n) { return n.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2); }
+function getNum(r,k) { const v=r[k]; return typeof v==='number'?v:parseFloat(String(v).replace('%',''))||0; }
+
+function renderAll() { renderOverview(); renderLogs(); renderFlags(); renderTLCards(); renderFilters(); }
+
+/* ── OVERVIEW ── */
+function renderOverview() {
+  const rows = filteredRows;
+  if (!rows.length) {
+    ['m-avg-comp','m-avg-conv','m-total-dos','m-total-flags','m-total-days'].forEach(id => { const el=document.getElementById(id); if(el){el.textContent='—';el.className='metric-val';} });
+    return;
+  }
+  const avgComp  = Math.round(rows.reduce((a,r)=>a+getNum(r,'Completion %'),0)/rows.length);
+  const avgConv  = Math.round(rows.reduce((a,r)=>a+getNum(r,'Conv %'),0)/rows.length);
+  const totalDOs = rows.reduce((a,r)=>a+getNum(r,'DOs'),0);
+  const flags    = rows.filter(r=>getNum(r,'Completion %')<70||(getNum(r,'Conv %')<25&&getNum(r,'Total Leads')>0)).length;
+  setM('m-avg-comp', avgComp+'%', avgComp>=80?'val-green':avgComp>=50?'val-amber':'val-red');
+  setM('m-avg-conv', avgConv+'%', avgConv>=25&&avgConv<=35?'val-green':avgConv<25?'val-red':'val-blue');
+  setM('m-total-dos', totalDOs, '');
+  setM('m-total-flags', flags, flags===0?'val-green':flags<=3?'val-amber':'val-red');
+  setM('m-total-days', rows.length, '');
+  document.getElementById('latest-count').textContent = Math.min(8, rows.length);
+  document.getElementById('latest-logs').innerHTML = buildTable(rows.slice().reverse().slice(0,8));
   buildCharts(rows);
 }
-function setM(id,v,cls){const el=document.getElementById(id);if(el){el.textContent=v;el.className='metric-val '+(cls||'');}}
+function setM(id,v,cls) { const el=document.getElementById(id); if(el){el.textContent=v;el.className='metric-val '+(cls||'');} }
 
-// CHARTS
-const cDefaults={plugins:{legend:{display:false},tooltip:{backgroundColor:'#1e1e1e',titleColor:'#eee',bodyColor:'#aaa',borderColor:'#333',borderWidth:1}},scales:{x:{ticks:{color:'#555',font:{size:9,family:"IBM Plex Mono"}},grid:{color:'#1a1a1a'}},y:{ticks:{color:'#555',font:{size:9,family:"IBM Plex Mono"}},grid:{color:'#1a1a1a'}}}};
-function dc(k){if(charts[k]){charts[k].destroy();delete charts[k];}}
+/* ── CHARTS ── */
+const cDefaults = {
+  plugins:{ legend:{display:false}, tooltip:{backgroundColor:'#1e1e1e',titleColor:'#eee',bodyColor:'#aaa',borderColor:'#333',borderWidth:1} },
+  scales:{ x:{ticks:{color:'#555',font:{size:9,family:"IBM Plex Mono"}},grid:{color:'#1a1a1a'}}, y:{ticks:{color:'#555',font:{size:9,family:"IBM Plex Mono"}},grid:{color:'#1a1a1a'}} }
+};
+function dc(k) { if(charts[k]){charts[k].destroy();delete charts[k];} }
 
-function buildCharts(rows){
-  const s=rows.slice().sort((a,b)=>new Date(a['Date'])-new Date(b['Date']));
-  const labels=s.map(r=>r['Date']||'');
-  dc('conv');charts['conv']=new Chart(document.getElementById('chart-conv').getContext('2d'),{type:'line',data:{labels,datasets:[{data:s.map(r=>getNum(r,'Conv %')),borderColor:'#00c97a',backgroundColor:'#00c97a15',fill:true,tension:.35,pointRadius:3,pointBackgroundColor:'#00c97a'},{data:Array(labels.length).fill(25),borderColor:'#f5a62340',borderDash:[4,4],pointRadius:0,fill:false},{data:Array(labels.length).fill(35),borderColor:'#f5a62340',borderDash:[4,4],pointRadius:0,fill:false}]},options:{...cDefaults,animation:{duration:900,easing:'easeOutQuart'}}});
-  dc('comp');charts['comp']=new Chart(document.getElementById('chart-comp').getContext('2d'),{type:'line',data:{labels,datasets:[{data:s.map(r=>getNum(r,'Completion %')),borderColor:'#4d9fff',backgroundColor:'#4d9fff15',fill:true,tension:.35,pointRadius:3,pointBackgroundColor:'#4d9fff'}]},options:{...cDefaults,animation:{duration:1000,easing:'easeOutQuart'}}});
-  dc('dos');charts['dos']=new Chart(document.getElementById('chart-dos').getContext('2d'),{type:'bar',data:{labels,datasets:[{label:'Leads',data:s.map(r=>getNum(r,'Total Leads')),backgroundColor:'#2a2a2a',borderRadius:4},{label:'DOs',data:s.map(r=>getNum(r,'DOs')),backgroundColor:'#00c97a88',borderRadius:4}]},options:{...cDefaults,plugins:{...cDefaults.plugins,legend:{display:true,labels:{color:'#666',font:{size:10,family:"IBM Plex Mono"}}}},animation:{duration:800,easing:'easeOutQuart'}}});
+function buildCharts(rows) {
+  const s = rows.slice().sort((a,b)=>new Date(a['Date'])-new Date(b['Date']));
+  const labels = s.map(r=>r['Date']||'');
+  dc('conv'); charts['conv']=new Chart(document.getElementById('chart-conv').getContext('2d'),{type:'line',data:{labels,datasets:[{data:s.map(r=>getNum(r,'Conv %')),borderColor:'#00c97a',backgroundColor:'#00c97a15',fill:true,tension:.35,pointRadius:3,pointBackgroundColor:'#00c97a'},{data:Array(labels.length).fill(25),borderColor:'#f5a62340',borderDash:[4,4],pointRadius:0,fill:false},{data:Array(labels.length).fill(35),borderColor:'#f5a62340',borderDash:[4,4],pointRadius:0,fill:false}]},options:{...cDefaults,animation:{duration:900}}});
+  dc('comp'); charts['comp']=new Chart(document.getElementById('chart-comp').getContext('2d'),{type:'line',data:{labels,datasets:[{data:s.map(r=>getNum(r,'Completion %')),borderColor:'#4d9fff',backgroundColor:'#4d9fff15',fill:true,tension:.35,pointRadius:3,pointBackgroundColor:'#4d9fff'}]},options:{...cDefaults,animation:{duration:1000}}});
+  dc('dos');  charts['dos']=new Chart(document.getElementById('chart-dos').getContext('2d'),{type:'bar',data:{labels,datasets:[{label:'Leads',data:s.map(r=>getNum(r,'Total Leads')),backgroundColor:'#2a2a2a',borderRadius:4},{label:'DOs',data:s.map(r=>getNum(r,'DOs')),backgroundColor:'#00c97a88',borderRadius:4}]},options:{...cDefaults,plugins:{...cDefaults.plugins,legend:{display:true,labels:{color:'#666',font:{size:10,family:"IBM Plex Mono"}}}},animation:{duration:800}}});
 }
 
-function buildSummaryCharts(rows){
-  const names=[...new Set(rows.map(r=>r['TL Name']).filter(Boolean))];
-  dc('tl-conv');charts['tl-conv']=new Chart(document.getElementById('chart-tl-conv').getContext('2d'),{type:'bar',data:{labels:names,datasets:[{data:names.map(n=>{const r=rows.filter(x=>x['TL Name']===n);return Math.round(r.reduce((a,x)=>a+getNum(x,'Conv %'),0)/r.length);}),backgroundColor:names.map(n=>tlColor(n)+'99'),borderRadius:6}]},options:{...cDefaults,animation:{duration:800}}});
-  dc('tl-comp');charts['tl-comp']=new Chart(document.getElementById('chart-tl-comp').getContext('2d'),{type:'bar',data:{labels:names,datasets:[{data:names.map(n=>{const r=rows.filter(x=>x['TL Name']===n);return Math.round(r.reduce((a,x)=>a+getNum(x,'Completion %'),0)/r.length);}),backgroundColor:names.map(n=>tlColor(n)+'99'),borderRadius:6}]},options:{...cDefaults,animation:{duration:900}}});
-  const s=rows.slice().sort((a,b)=>new Date(a['Date'])-new Date(b['Date']));
-  dc('flags');charts['flags']=new Chart(document.getElementById('chart-flags').getContext('2d'),{type:'bar',data:{labels:s.map(r=>r['Date']||''),datasets:[{data:s.map(r=>(getNum(r,'Completion %')<70||(getNum(r,'Conv %')<25&&getNum(r,'Total Leads')>0))?1:0),backgroundColor:'#ff444488',borderRadius:4}]},options:{...cDefaults,animation:{duration:700}}});
+function buildSummaryCharts(rows) {
+  const names = [...new Set(rows.map(r=>r['TL Name']).filter(Boolean))];
+  dc('tl-conv'); charts['tl-conv']=new Chart(document.getElementById('chart-tl-conv').getContext('2d'),{type:'bar',data:{labels:names,datasets:[{data:names.map(n=>{const r=rows.filter(x=>x['TL Name']===n);return Math.round(r.reduce((a,x)=>a+getNum(x,'Conv %'),0)/r.length);}),backgroundColor:names.map(n=>tlColor(n)+'99'),borderRadius:6}]},options:{...cDefaults,animation:{duration:800}}});
+  dc('tl-comp'); charts['tl-comp']=new Chart(document.getElementById('chart-tl-comp').getContext('2d'),{type:'bar',data:{labels:names,datasets:[{data:names.map(n=>{const r=rows.filter(x=>x['TL Name']===n);return Math.round(r.reduce((a,x)=>a+getNum(x,'Completion %'),0)/r.length);}),backgroundColor:names.map(n=>tlColor(n)+'99'),borderRadius:6}]},options:{...cDefaults,animation:{duration:900}}});
+  const s = rows.slice().sort((a,b)=>new Date(a['Date'])-new Date(b['Date']));
+  dc('flags'); charts['flags']=new Chart(document.getElementById('chart-flags').getContext('2d'),{type:'bar',data:{labels:s.map(r=>r['Date']||''),datasets:[{data:s.map(r=>(getNum(r,'Completion %')<70||(getNum(r,'Conv %')<25&&getNum(r,'Total Leads')>0))?1:0),backgroundColor:'#ff444488',borderRadius:4}]},options:{...cDefaults,animation:{duration:700}}});
 }
 
-// SUMMARY
-function renderSummary(){
-  const rows=filteredRows;
-  const cycleName=activeCycle==='all'?'All Time':(cycles.find(c=>c.id===activeCycle)||{name:'—'}).name;
-  document.getElementById('summary-cycle-label').textContent=cycleName+' · '+rows.length+' logs recorded';
-  if(!rows.length){document.getElementById('summary-hero').innerHTML='<div class="empty-state">No data for this cycle</div>';return;}
-  const avgComp=Math.round(rows.reduce((a,r)=>a+getNum(r,'Completion %'),0)/rows.length);
-  const avgConv=Math.round(rows.reduce((a,r)=>a+getNum(r,'Conv %'),0)/rows.length);
-  const totalDOs=rows.reduce((a,r)=>a+getNum(r,'DOs'),0);
-  const totalLeads=rows.reduce((a,r)=>a+getNum(r,'Total Leads'),0);
-  const totalFaxes=rows.reduce((a,r)=>a+getNum(r,'Faxes Sent'),0);
-  const totalRXs=rows.reduce((a,r)=>a+getNum(r,'RXs Received'),0);
-  const flagCount=rows.filter(r=>getNum(r,'Completion %')<70||(getNum(r,'Conv %')<25&&getNum(r,'Total Leads')>0)).length;
-  const names=[...new Set(rows.map(r=>r['TL Name']).filter(Boolean))];
-  const tlStats=names.map(n=>{const r=rows.filter(x=>x['TL Name']===n);return{name:n,conv:Math.round(r.reduce((a,x)=>a+getNum(x,'Conv %'),0)/r.length),comp:Math.round(r.reduce((a,x)=>a+getNum(x,'Completion %'),0)/r.length),logs:r.length};});
-  const best=tlStats.slice().sort((a,b)=>b.conv-a.conv)[0];
-  const worst=tlStats.slice().sort((a,b)=>a.conv-b.conv)[0];
-  const convColor=avgConv>=25&&avgConv<=35?'var(--green)':avgConv<25?'var(--red)':'var(--blue)';
-  const compColor=avgComp>=80?'var(--green)':avgComp>=50?'var(--amber)':'var(--red)';
+/* ── SUMMARY ── */
+function renderSummary() {
+  const rows = filteredRows;
+  const cycleObj = activeCycle === 'all' ? null : cycles.find(c=>c.id===activeCycle);
+  const cycleName = cycleObj ? cycleObj.name : 'All Time';
+  let dateRangeLabel = '';
+  if (cycleObj && cycleObj.start) {
+    const end = cycleEndDate(cycleObj);
+    dateRangeLabel = ` · ${fmtDate(cycleObj.start)} → ${fmtDate(end)}`;
+  }
+  document.getElementById('summary-cycle-label').textContent = cycleName + dateRangeLabel + ' · ' + rows.length + ' logs';
+  if (!rows.length) { document.getElementById('summary-hero').innerHTML='<div class="empty-state">No data for this cycle</div>'; return; }
+  const avgComp   = Math.round(rows.reduce((a,r)=>a+getNum(r,'Completion %'),0)/rows.length);
+  const avgConv   = Math.round(rows.reduce((a,r)=>a+getNum(r,'Conv %'),0)/rows.length);
+  const totalDOs  = rows.reduce((a,r)=>a+getNum(r,'DOs'),0);
+  const totalLeads= rows.reduce((a,r)=>a+getNum(r,'Total Leads'),0);
+  const totalFaxes= rows.reduce((a,r)=>a+getNum(r,'Faxes Sent'),0);
+  const totalRXs  = rows.reduce((a,r)=>a+getNum(r,'RXs Received'),0);
+  const flagCount = rows.filter(r=>getNum(r,'Completion %')<70||(getNum(r,'Conv %')<25&&getNum(r,'Total Leads')>0)).length;
+  const names = [...new Set(rows.map(r=>r['TL Name']).filter(Boolean))];
+  const tlStats = names.map(n=>{const r=rows.filter(x=>x['TL Name']===n);return{name:n,conv:Math.round(r.reduce((a,x)=>a+getNum(x,'Conv %'),0)/r.length),comp:Math.round(r.reduce((a,x)=>a+getNum(x,'Completion %'),0)/r.length),logs:r.length};});
+  const best  = tlStats.slice().sort((a,b)=>b.conv-a.conv)[0];
+  const worst = tlStats.slice().sort((a,b)=>a.conv-b.conv)[0];
+  const convColor = avgConv>=25&&avgConv<=35?'var(--green)':avgConv<25?'var(--red)':'var(--blue)';
+  const compColor = avgComp>=80?'var(--green)':avgComp>=50?'var(--amber)':'var(--red)';
   document.getElementById('summary-hero').innerHTML=`
-    <div class="summary-headline"><span class="dot"></span> Cycle Snapshot — ${cycleName}</div>
+    <div class="summary-headline"><span class="dot"></span> ${cycleName}${dateRangeLabel}</div>
     <div class="summary-grid">
       <div class="summary-stat"><div class="summary-stat-val" style="color:${convColor}">${avgConv}%</div><div class="summary-stat-label">Avg Conv%</div></div>
       <div class="summary-stat"><div class="summary-stat-val" style="color:${compColor}">${avgComp}%</div><div class="summary-stat-label">Avg Completion</div></div>
@@ -431,69 +646,90 @@ function renderSummary(){
   buildSummaryCharts(rows);
 }
 
-// TABLE
-function buildTable(rows){
-  if(!rows.length)return'<div class="empty-state">No data</div>';
-  return`<div class="log-row header"><span>Date</span><span>TL</span><span>Completion</span><span>Conv%</span><span>Leads</span><span>DOs</span><span>Status</span></div>`+
-  rows.map(r=>{
-    const comp=getNum(r,'Completion %'),conv=getNum(r,'Conv %');
-    const col=comp>=80?'var(--green)':comp>=50?'var(--amber)':'var(--red)';
-    const badge=comp>=80?'badge-on':comp>=50?'badge-warn':'badge-bad';
-    const n=r['TL Name']||'—',ac=tlColor(n);
-    return`<div class="log-row"><span style="font-family:var(--mono);font-size:11px;color:var(--muted2)">${r['Date']||'—'}</span><span class="tl-chip"><span class="tl-av" style="background:${ac}22;color:${ac}">${ini(n)}</span><span>${n}</span></span><div class="bar-wrap"><div class="bar-bg"><div class="bar-fill" style="width:${comp}%;background:${col}"></div></div><span class="bar-pct" style="color:${col}">${comp}%</span></div><span style="font-family:var(--mono);font-weight:600;color:${conv>=25&&conv<=35?'var(--green)':conv<25?'var(--red)':'var(--blue)'}">${conv}%</span><span style="font-family:var(--mono);color:var(--muted2)">${getNum(r,'Total Leads')}</span><span style="font-family:var(--mono)">${getNum(r,'DOs')}</span><span class="badge ${badge}">${comp>=80?'On Track':comp>=50?'Partial':'Low'}</span></div>`;
+/* ── TABLE ── */
+function buildTable(rows) {
+  if (!rows.length) return '<div class="empty-state">No data</div>';
+  return `<div class="log-row header"><span>Date</span><span>TL</span><span>Completion</span><span>Conv%</span><span>Leads</span><span>DOs</span><span>Status</span></div>`+
+  rows.map(r => {
+    const comp=getNum(r,'Completion %'), conv=getNum(r,'Conv %');
+    const col = comp>=80?'var(--green)':comp>=50?'var(--amber)':'var(--red)';
+    const badge = comp>=80?'badge-on':comp>=50?'badge-warn':'badge-bad';
+    const n=r['TL Name']||'—', ac=tlColor(n);
+    // find which cycle this row belongs to
+    const rowCycle = cycles.find(c => {
+      if (!c.start) return false;
+      const s=new Date(c.start); s.setHours(0,0,0,0);
+      const e=cycleEndDate(c); e.setHours(23,59,59,999);
+      const d=new Date(r['Date']); return !isNaN(d)&&d>=s&&d<=e;
+    });
+    const cycleTag = rowCycle ? `<span style="font-size:9px;font-family:var(--mono);color:var(--muted);margin-left:4px">${rowCycle.name}</span>` : '';
+    return `<div class="log-row"><span style="font-family:var(--mono);font-size:11px;color:var(--muted2)">${r['Date']||'—'}${cycleTag}</span><span class="tl-chip"><span class="tl-av" style="background:${ac}22;color:${ac}">${ini(n)}</span><span>${n}</span></span><div class="bar-wrap"><div class="bar-bg"><div class="bar-fill" style="width:${comp}%;background:${col}"></div></div><span class="bar-pct" style="color:${col}">${comp}%</span></div><span style="font-family:var(--mono);font-weight:600;color:${conv>=25&&conv<=35?'var(--green)':conv<25?'var(--red)':'var(--blue)'}">${conv}%</span><span style="font-family:var(--mono);color:var(--muted2)">${getNum(r,'Total Leads')}</span><span style="font-family:var(--mono)">${getNum(r,'DOs')}</span><span class="badge ${badge}">${comp>=80?'On Track':comp>=50?'Partial':'Low'}</span></div>`;
   }).join('');
 }
 
-function renderFilters(){
-  const names=[...new Set(allRows.map(r=>r['TL Name']).filter(Boolean))];
-  document.getElementById('tl-filters').innerHTML=`<button class="filter-btn ${activeFilter==='all'?'active':''}" onclick="setFilter('all')">All TLs</button>`+names.map(n=>`<button class="filter-btn ${activeFilter===n?'active':''}" onclick="setFilter('${n}')">${n}</button>`).join('');
+function renderFilters() {
+  const names = [...new Set(allRows.map(r=>r['TL Name']).filter(Boolean))];
+  document.getElementById('tl-filters').innerHTML =
+    `<button class="filter-btn ${activeFilter==='all'?'active':''}" onclick="setFilter('all')">All TLs</button>` +
+    names.map(n=>`<button class="filter-btn ${activeFilter===n?'active':''}" onclick="setFilter('${n}')">${n}</button>`).join('');
 }
-function setFilter(n){activeFilter=n;renderFilters();applyFilters();renderAll();}
-function renderLogs(){document.getElementById('all-logs-table').innerHTML=buildTable(filteredRows.slice().reverse());}
+function setFilter(n) { activeFilter=n; renderFilters(); applyFilters(); renderAll(); }
+function renderLogs() { document.getElementById('all-logs-table').innerHTML=buildTable(filteredRows.slice().reverse()); }
 
-function renderFlags(){
-  const rows=filteredRows.filter(r=>getNum(r,'Completion %')<70||(getNum(r,'Conv %')<25&&getNum(r,'Total Leads')>0)||getNum(r,'Red Flag Count')>0);
-  if(!rows.length){document.getElementById('flags-list').innerHTML='<div class="empty-state">No red flags — everything looks good ✓</div>';return;}
-  document.getElementById('flags-list').innerHTML=rows.slice().reverse().map(r=>{
-    const comp=getNum(r,'Completion %'),conv=getNum(r,'Conv %'),leads=getNum(r,'Total Leads');
+function renderFlags() {
+  const rows = filteredRows.filter(r=>getNum(r,'Completion %')<70||(getNum(r,'Conv %')<25&&getNum(r,'Total Leads')>0)||getNum(r,'Red Flag Count')>0);
+  if (!rows.length) { document.getElementById('flags-list').innerHTML='<div class="empty-state">No red flags — everything looks good ✓</div>'; return; }
+  document.getElementById('flags-list').innerHTML = rows.slice().reverse().map(r=>{
+    const comp=getNum(r,'Completion %'), conv=getNum(r,'Conv %'), leads=getNum(r,'Total Leads');
     const issues=[];
-    if(comp<70)issues.push(`Completion ${comp}% — checklist incomplete`);
-    if(conv<25&&leads>0)issues.push(`Conv ${conv}% — below 25% target`);
-    return`<div class="flag-item"><div class="flag-dot" style="background:${comp<50||(conv<25&&leads>0)?'var(--red)':'var(--amber)'}"></div><div class="flag-text"><strong>${r['Date']||'—'} — ${r['TL Name']||'—'}</strong>${issues.map(i=>`<div>${i}</div>`).join('')}${r['Coaching Notes']?`<div class="flag-note">${r['Coaching Notes']}</div>`:''}</div></div>`;
+    if(comp<70) issues.push(`Completion ${comp}% — checklist incomplete`);
+    if(conv<25&&leads>0) issues.push(`Conv ${conv}% — below 25% target`);
+    return `<div class="flag-item"><div class="flag-dot" style="background:${comp<50||(conv<25&&leads>0)?'var(--red)':'var(--amber)'}"></div><div class="flag-text"><strong>${r['Date']||'—'} — ${r['TL Name']||'—'}</strong>${issues.map(i=>`<div>${i}</div>`).join('')}${r['Coaching Notes']?`<div class="flag-note">${r['Coaching Notes']}</div>`:''}</div></div>`;
   }).join('');
 }
 
-function renderTLCards(){
-  const names=[...new Set(filteredRows.map(r=>r['TL Name']).filter(Boolean))];
-  if(!names.length){document.getElementById('tl-cards').innerHTML='<div class="empty-state">No data</div>';return;}
-  document.getElementById('tl-cards').innerHTML=names.map(name=>{
+function renderTLCards() {
+  const names = [...new Set(filteredRows.map(r=>r['TL Name']).filter(Boolean))];
+  if (!names.length) { document.getElementById('tl-cards').innerHTML='<div class="empty-state">No data</div>'; return; }
+  document.getElementById('tl-cards').innerHTML = names.map(name=>{
     const rows=filteredRows.filter(r=>r['TL Name']===name);
     const avgComp=Math.round(rows.reduce((a,r)=>a+getNum(r,'Completion %'),0)/rows.length);
     const avgConv=Math.round(rows.reduce((a,r)=>a+getNum(r,'Conv %'),0)/rows.length);
     const c=tlColor(name);
-    return`<div class="tl-card"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><div class="tl-av" style="width:38px;height:38px;border-radius:50%;background:${c}22;color:${c};font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;">${ini(name)}</div><div style="font-size:15px;font-weight:700;">${name}</div></div>${[['Avg Conv%',avgConv+'%',avgConv>=25&&avgConv<=35?'var(--green)':avgConv<25?'var(--red)':'var(--blue)'],['Avg Completion',avgComp+'%',avgComp>=80?'var(--green)':avgComp>=50?'var(--amber)':'var(--red)'],['Total DOs',rows.reduce((a,r)=>a+getNum(r,'DOs'),0),''],['Total Leads',rows.reduce((a,r)=>a+getNum(r,'Total Leads'),0),''],['Faxes Sent',rows.reduce((a,r)=>a+getNum(r,'Faxes Sent'),0)||'—',''],['RXs Received',rows.reduce((a,r)=>a+getNum(r,'RXs Received'),0)||'—',''],['Days Logged',rows.length,''],['Flagged Shifts',rows.filter(r=>getNum(r,'Completion %')<70||(getNum(r,'Conv %')<25&&getNum(r,'Total Leads')>0)).length,rows.filter(r=>getNum(r,'Completion %')<70).length===0?'var(--green)':'var(--amber)']].map(([l,v,col])=>`<div class="tl-stat-row"><span class="tl-stat-label">${l}</span><span class="tl-stat-val" style="color:${col||'var(--text)'}">${v}</span></div>`).join('')}</div>`;
+    return `<div class="tl-card"><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;"><div class="tl-av" style="width:38px;height:38px;border-radius:50%;background:${c}22;color:${c};font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;">${ini(name)}</div><div style="font-size:15px;font-weight:700;">${name}</div></div>${[
+      ['Avg Conv%',avgConv+'%',avgConv>=25&&avgConv<=35?'var(--green)':avgConv<25?'var(--red)':'var(--blue)'],
+      ['Avg Completion',avgComp+'%',avgComp>=80?'var(--green)':avgComp>=50?'var(--amber)':'var(--red)'],
+      ['Total DOs',rows.reduce((a,r)=>a+getNum(r,'DOs'),0),''],
+      ['Total Leads',rows.reduce((a,r)=>a+getNum(r,'Total Leads'),0),''],
+      ['Faxes Sent',rows.reduce((a,r)=>a+getNum(r,'Faxes Sent'),0)||'—',''],
+      ['RXs Received',rows.reduce((a,r)=>a+getNum(r,'RXs Received'),0)||'—',''],
+      ['Days Logged',rows.length,''],
+      ['Flagged Shifts',rows.filter(r=>getNum(r,'Completion %')<70||(getNum(r,'Conv %')<25&&getNum(r,'Total Leads')>0)).length, rows.filter(r=>getNum(r,'Completion %')<70).length===0?'var(--green)':'var(--amber)']
+    ].map(([l,v,col])=>`<div class="tl-stat-row"><span class="tl-stat-label">${l}</span><span class="tl-stat-val" style="color:${col||'var(--text)'}">${v}</span></div>`).join('')}</div>`;
   }).join('');
 }
 
-// EXPORT
-function exportCSV(){
-  if(!filteredRows.length){alert('No data to export');return;}
-  const h=Object.keys(filteredRows[0]);
-  const csv=[h.join(','),...filteredRows.map(r=>h.map(k=>{const v=(r[k]||'').toString();return v.includes(',')?`"${v}"`:v;}).join(','))].join('\n');
-  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='chasing_data.csv';a.click();
+/* ── EXPORT ── */
+function exportCSV() {
+  if (!filteredRows.length) { alert('No data to export'); return; }
+  const h = Object.keys(filteredRows[0]);
+  const csv = [h.join(','), ...filteredRows.map(r=>h.map(k=>{const v=(r[k]||'').toString();return v.includes(',')?`"${v}"`:v;}).join(','))].join('\n');
+  const a = document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'})); a.download='chasing_data.csv'; a.click();
 }
-function exportToSheets(){
-  if(!filteredRows.length){alert('No data to export');return;}
-  const h=Object.keys(filteredRows[0]);
-  const tsv=[h.join('\t'),...filteredRows.map(r=>h.map(k=>(r[k]||'').toString().replace(/\t/g,' ')).join('\t'))].join('\n');
-  navigator.clipboard.writeText(tsv).then(()=>{alert('Copied to clipboard!\n\n1. Open Google Sheets\n2. Click an empty cell\n3. Paste (Ctrl+V)\n\nAll columns will paste correctly.');}).catch(()=>exportCSV());
+function exportToSheets() {
+  if (!filteredRows.length) { alert('No data to export'); return; }
+  const h = Object.keys(filteredRows[0]);
+  const tsv = [h.join('\t'), ...filteredRows.map(r=>h.map(k=>(r[k]||'').toString().replace(/\t/g,' ')).join('\t'))].join('\n');
+  navigator.clipboard.writeText(tsv).then(()=>alert('Copied!\n1. Open Google Sheets\n2. Click empty cell\n3. Paste (Ctrl+V)')).catch(()=>exportCSV());
 }
 
-function switchView(id){
+/* ── NAV ── */
+function switchView(id) {
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.getElementById('view-'+id).classList.add('active');
-  document.querySelectorAll('.nav-item').forEach((n,i)=>n.classList.toggle('active',['overview','summary','logs','flags','tl'][i]===id));
-  if(id==='summary')renderSummary();
+  document.querySelectorAll('.nav-item').forEach((n,i)=>n.classList.toggle('active',['overview','summary','logs','flags','tl','cycles'][i]===id));
+  if (id==='summary') renderSummary();
+  if (id==='cycles') renderCycleManager();
 }
 </script>
 </body>
