@@ -225,7 +225,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--sans); font
 
 <script>
 // Password gate — SHA-256 hash of ICO$007
-const PASS_HASH = 'b3c879b8a8fa797e97ab641f7a9ee37bad9db9c0c9760fa01467f00f87dc0c2f';
+const PASS_HASH = '3338f3c53f6bc9255387e4824b61ebd6e760edd9b87122f8ef2ee00c91bbc967';
 
 async function sha256(str) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
